@@ -107,7 +107,6 @@ const Header = () => {
                     </Popover.Panel>
                 </Transition>
             </Popover>
-            <div className="p-11"></div>
         </>
     )
 }
