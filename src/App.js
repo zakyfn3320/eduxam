@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
@@ -10,16 +9,20 @@ import {
   Register,
   SubjectNew,
 } from "./pages"
+import Header from './components/Header';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/dashboard' element={<DashboardAdmin />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/subject' element={<SubjectNew />} />
-      <Route path='/' element={<Home />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path='/dashboard' element={<DashboardAdmin />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/subject' element={<SubjectNew />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
