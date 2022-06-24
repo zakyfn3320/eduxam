@@ -26,13 +26,11 @@ function App() {
     <Route path='/subject' element={<SubjectShow />} />,
     <Route path='/subject-new' element={<SubjectNew />} />,
     <Route path='/subject-edit' element={<SubjectNew />} />,
-    <Route path='/' element={<Dashboard />} />,
   ]
 
   const nonAuthedRoutes = [
     <Route path='/login' element={<Login />} />,
     <Route path='/register' element={<Register />} />,
-    <Route path='/' element={<Home />} />,
   ]
 
 
@@ -42,6 +40,7 @@ function App() {
         <Header />
         <Routes>
           {(loggedIn ? authedRoutes : nonAuthedRoutes).map(item => item)}
+          <Route path='/' element={<Home />} />,
           <Route
             path="*"
             element={

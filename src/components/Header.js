@@ -9,9 +9,7 @@ import { AuthenticationContext } from '../hooks/Authentication'
 
 const links = [
     { id: 0, name: 'Home', link: '/' },
-    { id: 1, name: 'Explore', link: '/explore' },
-    { id: 2, name: 'Featured', link: '/featured' },
-    { id: 3, name: 'About', link: '/about' },
+    { id: 1, name: 'Dashboard', link: '/dashboard' },
 ]
 
 const Header = () => {
