@@ -27,6 +27,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/subject' element={<SubjectShow />} />
+          <Route path='/subject-new' element={<SubjectNew />} />
+          <Route path='/subject-edit' element={<SubjectNew />} />
           <Route path='/' element={<Home />} />
         </Routes>
       </AuthenticationContext.Provider>

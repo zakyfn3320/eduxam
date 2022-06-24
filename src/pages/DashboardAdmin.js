@@ -50,7 +50,7 @@ const DashboardAdmin = () => {
                     <div className="flex justify-between">
                         <h1 className='text-2xl font-bold mb-5'>List materi</h1>
                         <div>
-                            <Link to='/' className='bg-sky-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold inline'>Tambah Materi +</Link>
+                            <Link to='/subject-new' className='bg-sky-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold inline'>Tambah Materi +</Link>
                         </div>
                     </div>
                     {loading && <span>Loading</span>}
@@ -59,8 +59,8 @@ const DashboardAdmin = () => {
                             return (
                                 <li className='flex gap-5 items-center mb-3 '>
                                     <div className='border-solid border-2 rounded-lg grow border-sky-500 p-3 hover:bg-sky-100 transition duration-150 '>{item.namaPelajaran}</div>
-                                    <button className=''><PencilIcon className='fill-sky-500 w-7' /></button>
-                                    <button className=''><TrashIcon className='fill-red-500 w-7' /></button>
+                                    <Link to='/subject-edit' className=''><PencilIcon className='fill-sky-500 w-7' /></Link>
+                                    <Link to='/subject-edit' className=''><TrashIcon className='fill-red-500 w-7' /></Link>
                                 </li>
                             )
                         })}

@@ -15,7 +15,7 @@ const Login = () => {
                         <br />
                         <div className="grid place-content-center">
                             <div className="flex justify-center mb-2">
-                                <Link to='/' className='p-3 bg-red-500 rounded-lg text-white font-bold shrink'><span>Masuk</span></Link>
+                                <Link to='/dashboard' className='p-3 bg-red-500 rounded-lg text-white font-bold shrink'><span>Masuk</span></Link>
                             </div>
                             <h3 className=''>Belum memiliki akun? silakan <Link to='/register' className='underline'>daftar</Link></h3>
                             <div>

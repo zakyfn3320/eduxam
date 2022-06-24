@@ -65,8 +65,8 @@ const Header = () => {
                             Sign in
                         </Link> */}
                             {showAuthButton && (<>
-                                <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
-                                <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                                <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
+                                <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
                             </>)}
                             {/* <ButtonCart /> */}
                         </div>
@@ -113,8 +113,8 @@ const Header = () => {
                                             </Link>
                                         ))}
                                         {showAuthButton && (<>
-                                            <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
-                                            <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                                            <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
+                                            <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
                                         </>)}
                                         {/* <ButtonCart /> */}
                                     </nav>
