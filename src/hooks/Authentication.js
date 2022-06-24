@@ -11,7 +11,13 @@ const useAuthentication = () => {
     useEffect(() => {
         const embedUser = require("../utils/users.json")
         setUserDB(embedUser)
+        const localUser = localStorage.getItem("user")
+        if (localUser !== null) {
+            setUser(JSON.parse(localUser))
+            setLoggedIn(true)
+        }
     }, [])
+
     useEffect(() => {
         console.log('userDB', userDB)
     }, [userDB])
@@ -30,6 +36,8 @@ const useAuthentication = () => {
         if (filteredUser.length < 1) return false
         if (filteredUser[0].password === user.password) {
             setLoggedIn(true)
+            const userString = JSON.stringify(filteredUser[0])
+            localStorage.setItem("user", userString)
             return true
         } else {
             return false
@@ -47,6 +55,7 @@ const useAuthentication = () => {
     const doLogout = () => {
         setUser(null)
         setRole(null)
+        localStorage.removeItem("user")
     }
 
     return { user, role, isLoggedIn, doRegisterUser, doLoginUser, doLogout }
