@@ -4,7 +4,7 @@ import TextInput from '../components/TextInput'
 
 const SubjectNew = () => {
     return (
-        <div className='md:h-screen py-32 flex justify-center items-center'>
+        <div className='py-32 flex justify-center items-center'>
             <div className='bg-white w-5/6 md:w-4/5 rounded-3xl drop-shadow-xl'>
                 <div className="p-10">
                     <h1 className='text-2xl font-bold mb-5'>Tambah Materi</h1>

@@ -35,7 +35,7 @@ const SubjectShow = () => {
     }, [])
 
     return (
-        <div className='md:h-screen py-32 flex flex-col justify-center items-center'>
+        <div className='py-32 flex flex-col justify-center items-center'>
             {loading && <span>Loading</span>}
             <div className='bg-white w-5/6 md:w-4/5 rounded-3xl drop-shadow-xl mb-5'>
                 <div className="p-10">

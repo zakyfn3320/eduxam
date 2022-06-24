@@ -4,7 +4,7 @@ import TextInput from '../components/TextInput'
 
 const Login = () => {
     return (
-        <div className='md:h-screen py-32 flex justify-center items-center'>
+        <div className='py-32 flex justify-center items-center'>
             <div className='bg-white w-5/6 md:w-4/5 lg:w-1/2 rounded-3xl drop-shadow-xl'>
                 <div className="grid grid-cols">
                     <div className='p-10 block'>
