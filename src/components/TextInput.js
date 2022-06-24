@@ -8,7 +8,7 @@ const TextInput = (props) => {
     return (
         <div className='w-full py-1' onFocus={changeFocus} onBlur={changeFocus}>
             <span className={`text-lg font-semibold pointer-events-none`}>{props.children} </span>
-            <input className='w-full border rounded-lg p-2 hover:border-solid border-2 border-sky-500' type={props.type} />
+            <input className='w-full border rounded-lg p-2 hover:border-solid border-2 border-sky-500' type={props.type} onChange={props.onChange} name={props.name} />
         </div>
     )
 }
