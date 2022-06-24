@@ -57,7 +57,7 @@ const useAuthentication = () => {
         setRole(null)
         localStorage.removeItem("user")
         setLoggedIn(false)
-        navigate('/login')
+        return true
     }
 
     return { user, role, isLoggedIn, doRegisterUser, doLoginUser, doLogout }

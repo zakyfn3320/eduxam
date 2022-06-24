@@ -4,7 +4,7 @@ import {
     MenuIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthenticationContext } from '../hooks/Authentication'
 
 const links = [
@@ -15,10 +15,14 @@ const links = [
 const Header = () => {
 
     const authentication = useContext(AuthenticationContext)
-
+    const navigate = useNavigate()
     const showContent = authentication.isLoggedIn
     const showAuthButton = !authentication.isLoggedIn
 
+    const doLogout = () => {
+        const logoutSuccess = authentication.doLogout()
+        if (logoutSuccess) navigate('/login')
+    }
 
     return (
         <>
@@ -62,7 +66,7 @@ const Header = () => {
                                 <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
                                 <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
                             </>) : (
-                                <button onClick={() => authentication.doLogout()} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
+                                <button onClick={doLogout} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
                             )}
                             {/* <ButtonCart /> */}
                         </div>
@@ -112,7 +116,7 @@ const Header = () => {
                                             <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
                                             <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
                                         </>) : (
-                                            <button onClick={() => authentication.doLogout()} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
+                                            <button onClick={doLogout} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
                                         )}
                                         {/* <ButtonCart /> */}
                                     </nav>
