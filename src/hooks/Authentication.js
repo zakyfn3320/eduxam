@@ -29,9 +29,7 @@ const useAuthentication = () => {
     }
 
     const doLoginUser = (user) => {
-        // console.log('user', user)
         const filteredUser = userDB.filter(item => item.email === user.email)
-        // console.log('filteredUser', filteredUser)
         if (filteredUser.length < 1) return false
         if (filteredUser[0].password === user.password) {
             setLoggedIn(true)

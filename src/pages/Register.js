@@ -17,11 +17,6 @@ const Register = () => {
 
     const authentication = useContext(AuthenticationContext)
 
-    // useEffect(() => {
-    //     console.log('Authentication', authentication)
-    // }, [authentication])
-
-
     const doSignIn = (e) => {
         authentication.doRegisterUser(user)
         navigate("/login")

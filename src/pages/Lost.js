@@ -17,7 +17,6 @@ const Lost = () => {
         }
     }, [second, navigate])
 
-    console.log('second', second)
     return (
         <div className="pt-32 grid grid-cols-1 lg:grid-cols-2 px-10 text-sky-500">
             <div className='mt-10'>

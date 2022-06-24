@@ -10,12 +10,7 @@ const component = {
 
 const Dashboard = () => {
     const authentication = useContext(AuthenticationContext)
-    // console.log('authentication', authentication)
     const user = authentication.user
-    // const [user, setUser] = useState(null)
-    // useEffect(() => {
-    //     setUser(authentication.user)
-    // }, [authentication])
 
     return user === null
         ? <span>Loading</span>
