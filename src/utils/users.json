@@ -3,14 +3,14 @@
         "id": "09ehfe37489f",
         "name": "Teacher",
         "email": "teacher@teacher.com",
-        "password": "123qwe",
+        "password": "123qwe12",
         "role": "teacher"
     },
     {
         "id": "0dt7fg8sfbs0",
         "name": "Zaky",
         "email": "student@student.com",
-        "password": "123qwe",
+        "password": "123qwe12",
         "major": "biology",
         "class": "4IA88",
         "role": "student"

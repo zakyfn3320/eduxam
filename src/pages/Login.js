@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import TextInput from '../components/TextInput'
 import { AuthenticationContext } from '../hooks/Authentication'
 
 const Login = () => {
 
     const [auth, setAuth] = useState({ email: '', password: '' })
+    const navigate = useNavigate()
 
     const authentication = useContext(AuthenticationContext)
 
@@ -14,8 +15,12 @@ const Login = () => {
     }, [authentication])
 
     const doSignIn = () => {
-        authentication.setUserState(auth)
-        console.log('first', auth)
+        const status = authentication.doLoginUser(auth)
+        if (status) {
+            navigate('/dashboard')
+        } else {
+            alert('Tidak bisa login')
+        }
     }
 
     const handleValue = (e) => {
