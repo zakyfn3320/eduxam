@@ -1,10 +1,11 @@
-import { Fragment } from 'react'
+import { Fragment, useContext, useEffect } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
     MenuIcon,
     XIcon,
 } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
+import { AuthenticationContext } from '../hooks/Authentication'
 
 const links = [
     { id: 0, name: 'Home', link: '/' },
@@ -14,6 +15,17 @@ const links = [
 ]
 
 const Header = () => {
+
+    const authentication = useContext(AuthenticationContext)
+
+    const showContent = authentication.user !== null
+    const showAuthButton = authentication.user === null
+
+    useEffect(() => {
+        console.log('Authentication', authentication)
+    }, [authentication])
+
+
     return (
         <>
             <Popover className="fixed w-full bg-white z-50">
@@ -36,23 +48,26 @@ const Header = () => {
                                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
                             </Popover.Button>
                         </div>
-                        <Popover.Group as="nav" className="hidden md:flex space-x-10">
-                            {links.map(item => {
-                                return (
+                        {showContent && (<>
+                            <Popover.Group as="nav" className="hidden md:flex space-x-10">
+                                {links.map(item => {
+                                    return (
 
-                                    <Link key={item.id} to={item.link} className="text-base font-medium text-gray-500 hover:text-gray-900">
-                                        {item.name}
-                                    </Link>
-                                )
-                            })}
-                        </Popover.Group>
+                                        <Link key={item.id} to={item.link} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                            {item.name}
+                                        </Link>
+                                    )
+                                })}
+                            </Popover.Group>
+                        </>)}
                         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                             {/* <Link to="/" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
                             Sign in
                         </Link> */}
-
-                            <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
-                            <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                            {showAuthButton && (<>
+                                <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
+                                <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                            </>)}
                             {/* <ButtonCart /> */}
                         </div>
                     </div>
@@ -87,7 +102,7 @@ const Header = () => {
                                 </div>
                                 <div className="mt-6">
                                     <nav className="grid gap-y-4">
-                                        {links.map((item) => (
+                                        {showContent && links.map((item) => (
                                             <Link
                                                 key={item.id}
                                                 to={item.link}
@@ -97,8 +112,10 @@ const Header = () => {
                                                 <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                                             </Link>
                                         ))}
-                                        <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
-                                        <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                                        {showAuthButton && (<>
+                                            <Link to='/' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
+                                            <Link to='/' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
+                                        </>)}
                                         {/* <ButtonCart /> */}
                                     </nav>
                                 </div>
