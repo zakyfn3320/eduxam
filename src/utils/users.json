@@ -1,0 +1,18 @@
+[
+    {
+        "id": "09ehfe37489f",
+        "name": "Teacher",
+        "email": "teacher@teacher.com",
+        "password": "123qwe",
+        "role": "teacher"
+    },
+    {
+        "id": "0dt7fg8sfbs0",
+        "name": "Zaky",
+        "email": "student@student.com",
+        "password": "123qwe",
+        "major": "biology",
+        "class": "4IA88",
+        "role": "student"
+    }
+]
