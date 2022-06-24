@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import TextInput from '../components/TextInput'
 import { AuthenticationContext } from '../hooks/Authentication'
@@ -9,10 +9,6 @@ const Login = () => {
     const navigate = useNavigate()
 
     const authentication = useContext(AuthenticationContext)
-
-    useEffect(() => {
-        console.log('Authentication', authentication)
-    }, [authentication])
 
     const doSignIn = () => {
         const status = authentication.doLoginUser(auth)

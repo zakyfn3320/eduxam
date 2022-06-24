@@ -1,13 +1,11 @@
-import DashboardAdmin from "./DashboardAdmin";
-import DashboardStudent from "./DashboardStudent";
+import Dashboard from "./Dashboard";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
 import SubjectNew from "./SubjectNew";
 
 export {
-    DashboardAdmin,
-    DashboardStudent,
+    Dashboard,
     Home,
     Login,
     Register,

@@ -1,4 +1,4 @@
-import { Fragment, useContext, useEffect } from 'react'
+import { Fragment, useContext } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
     MenuIcon,
@@ -20,10 +20,6 @@ const Header = () => {
 
     const showContent = authentication.isLoggedIn
     const showAuthButton = !authentication.isLoggedIn
-
-    useEffect(() => {
-        console.log('Authentication', authentication)
-    }, [authentication])
 
 
     return (
@@ -64,10 +60,12 @@ const Header = () => {
                             {/* <Link to="/" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
                             Sign in
                         </Link> */}
-                            {showAuthButton && (<>
+                            {showAuthButton ? (<>
                                 <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
                                 <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
-                            </>)}
+                            </>) : (
+                                <button onClick={() => authentication.doLogout()} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
+                            )}
                             {/* <ButtonCart /> */}
                         </div>
                     </div>
@@ -112,10 +110,12 @@ const Header = () => {
                                                 <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                                             </Link>
                                         ))}
-                                        {showAuthButton && (<>
+                                        {showAuthButton ? (<>
                                             <Link to='/register' className='bg-red-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Daftar</Link>
                                             <Link to='/login' className='bg-green-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Masuk</Link>
-                                        </>)}
+                                        </>) : (
+                                            <button onClick={() => authentication.doLogout()} className='bg-orange-500 py-2 px-5 mr-2 rounded-lg text-white font-semibold'>Logout</button>
+                                        )}
                                         {/* <ButtonCart /> */}
                                     </nav>
                                 </div>
