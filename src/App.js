@@ -9,7 +9,8 @@ import {
   Login,
   Register,
   SubjectNew,
-  Dashboard
+  Dashboard,
+  Lost
 } from "./pages"
 import Header from './components/Header';
 import SubjectShow from './pages/SubjectShow';
@@ -44,11 +45,7 @@ function App() {
           <Route path='/' element={<Home />} />,
           <Route
             path="*"
-            element={
-              <div className='py-32'>
-                <h2>404 Page not found</h2>
-              </div>
-            }
+            element={<Lost />}
           />
         </Routes>
       </AuthenticationContext.Provider>
