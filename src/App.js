@@ -11,6 +11,7 @@ import {
   SubjectNew,
 } from "./pages"
 import Header from './components/Header';
+import SubjectShow from './pages/SubjectShow';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path='/dashboard' element={<DashboardStudent />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/subject' element={<SubjectNew />} />
+        <Route path='/subject' element={<SubjectShow />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </>
