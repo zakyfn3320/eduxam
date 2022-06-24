@@ -2,7 +2,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
 import {
-  DashboardAdmin,
+  // DashboardAdmin,
+  DashboardStudent,
   // DashboardStudent,
   Home,
   Login,
@@ -16,7 +17,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path='/dashboard' element={<DashboardAdmin />} />
+        <Route path='/dashboard' element={<DashboardStudent />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/subject' element={<SubjectNew />} />
