@@ -69,43 +69,43 @@ const initalListMapel = [
         namaMapel: 'Kimia'
     },
     {
-        id: '0',
+        id: '8',
         namaMapel: 'Biologi'
     },
     {
-        id: '2',
+        id: '9',
         namaMapel: 'Fisika'
     },
     {
-        id: '4',
+        id: '10',
         namaMapel: 'Kimia'
     },
     {
-        id: '0',
+        id: '11',
         namaMapel: 'Biologi'
     },
     {
-        id: '2',
+        id: '12',
         namaMapel: 'Fisika'
     },
     {
-        id: '4',
+        id: '14',
         namaMapel: 'Kimia'
     },
     {
-        id: '4',
+        id: '15',
         namaMapel: 'Kimia'
     },
     {
-        id: '0',
+        id: '16',
         namaMapel: 'Biologi'
     },
     {
-        id: '2',
+        id: '17',
         namaMapel: 'Fisika'
     },
     {
-        id: '4',
+        id: '18',
         namaMapel: 'Kimia'
     },
 ]
@@ -135,7 +135,7 @@ const DashboardStudent = () => {
                             <ul className='h-auto p-3'>
                                 {listMapel.map(item => {
                                     return (
-                                        <li className='mb-3 '>
+                                        <li key={item.id} className='mb-3 '>
                                             <div className='border-solid border-2 rounded-lg grow border-sky-500 p-3 hover:bg-sky-100 transition duration-150 '>{item.namaMapel}</div>
                                         </li>
                                     )
@@ -153,7 +153,7 @@ const DashboardStudent = () => {
                             <ul className='h-auto p-3'>
                                 {listMateri.map(item => {
                                     return (
-                                        <Link to='/subject'>
+                                        <Link key={item.id} to='/subject'>
                                             <li className='flex gap-5 items-center mb-3 '>
                                                 <div className='border-solid border-2 rounded-lg grow border-sky-500 p-3 hover:bg-sky-100 transition duration-150 '>{item.namaPelajaran}</div>
                                                 <button className=''><ChevronRightIcon className='fill-sky-500 w-7' /></button>

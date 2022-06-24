@@ -57,7 +57,7 @@ const DashboardAdmin = () => {
                     <ul>
                         {listMateri.map(item => {
                             return (
-                                <li className='flex gap-5 items-center mb-3 '>
+                                <li key={item.id} className='flex gap-5 items-center mb-3 '>
                                     <div className='border-solid border-2 rounded-lg grow border-sky-500 p-3 hover:bg-sky-100 transition duration-150 '>{item.namaPelajaran}</div>
                                     <Link to='/subject-edit' className=''><PencilIcon className='fill-sky-500 w-7' /></Link>
                                     <Link to='/subject-edit' className=''><TrashIcon className='fill-red-500 w-7' /></Link>

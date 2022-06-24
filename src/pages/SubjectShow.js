@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const initialListMateri = [
     {
@@ -52,9 +51,9 @@ const SubjectShow = () => {
                                 <h3 className='text-xl my-3'>Materi M{index + 1}</h3>
                                 <h3 className='text-xl font-semibold'>Materi ini berisi tentang</h3>
                                 <ul className='list-disc ml-5'>
-                                    {item.isiMateri.map(item => {
+                                    {item.isiMateri.map((item, index) => {
                                         return (
-                                            <li>{item}</li>
+                                            <li key={index}>{item}</li>
                                         )
                                     })}
                                 </ul>

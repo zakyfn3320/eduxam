@@ -14,6 +14,7 @@ import {
 import Header from './components/Header';
 import SubjectShow from './pages/SubjectShow';
 import { AuthenticationContext, useAuthentication } from './hooks/Authentication';
+import { Fragment } from 'react';
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
       <AuthenticationContext.Provider value={authentication}>
         <Header />
         <Routes>
-          {(loggedIn ? authedRoutes : nonAuthedRoutes).map(item => item)}
+          {(loggedIn ? authedRoutes : nonAuthedRoutes).map((item, index) => <Fragment key={index}>{item}</Fragment>)}
           <Route path='/' element={<Home />} />,
           <Route
             path="*"
