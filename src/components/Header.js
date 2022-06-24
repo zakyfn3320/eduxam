@@ -18,8 +18,8 @@ const Header = () => {
 
     const authentication = useContext(AuthenticationContext)
 
-    const showContent = authentication.user !== null
-    const showAuthButton = authentication.user === null
+    const showContent = authentication.isLoggedIn
+    const showAuthButton = !authentication.isLoggedIn
 
     useEffect(() => {
         console.log('Authentication', authentication)
